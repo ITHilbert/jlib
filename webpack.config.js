@@ -59,9 +59,9 @@ module.exports = [
             path: path.resolve(__dirname, 'dist')
         }
     },
-    //Sass Vue
+    //SCSS Vue
     {
-        entry: ['./src/sass/vuecomponents.scss'],
+        entry: ['./src/scss/vuecomponents.scss'],
         module: {
             rules: [{
                 test: /.scss$/,
