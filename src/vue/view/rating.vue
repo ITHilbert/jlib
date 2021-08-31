@@ -10,7 +10,7 @@
 </fieldset>
 </template>
 
-<script lang="ts">
+<script>
     export default {
         props: {
           'value': {
@@ -39,7 +39,7 @@
           }
         },
         methods: {
-          classes: function (nr:number):string {
+          classes: function (nr) {
             var value =  Math.round(this.value);
             if( value >= nr){
               return 'rated';

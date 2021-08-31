@@ -2,18 +2,6 @@
     <textarea class="form-control" :rows="rows" v-model="currentValue"></textarea>
 </template>
 
-
-
-<script>
-    export default {
-        props: {
-            'rows': {
-                default: '3'
-            },
-        }    
-    }
-</script>
-
 <script>
     export default {
         props: {
