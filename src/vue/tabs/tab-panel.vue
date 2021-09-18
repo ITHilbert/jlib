@@ -19,7 +19,7 @@
             return this.name + '-tab';
           },
           classes: function () {
-            if(this.aktiv === true){
+            if(this.aktiv === "true"){
               return 'tab-pane fade show active';
             }else{
               return 'tab-pane fade show';

@@ -22,7 +22,7 @@
             return '#'+this.name;
           },
           classes: function () {
-            if(this.aktiv === true){
+            if(this.aktiv === "true"){
               return 'nav-link active';
             }else{
               return 'nav-link';
