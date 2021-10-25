@@ -1,5 +1,5 @@
 <template>
-    <div class="row" v-bind="$attrs">
+    <div class="col-8" v-bind="$attrs">
         <slot></slot>
     </div>
 </template>
