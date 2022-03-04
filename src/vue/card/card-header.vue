@@ -1,10 +1,21 @@
 <template>
-    <div class="card-header" v-bind="$attrs">
+    <div v-bind:class="defaultclassheader + classheader" v-bind="$attrs">
         <slot></slot>
     </div>
 </template>
 
-<style>
-.card-header{
-  font-weight: bold;}
-</style>
+<script>
+    export default {
+        props: {
+          'classheader': {
+              default: 'font-weight-bold'
+          },
+        },
+        data: function(){
+            return {
+                'defaultclasscard': 'card ',
+                'defaultclassheader': 'card-header ',
+            }
+        },
+    }
+</script>
