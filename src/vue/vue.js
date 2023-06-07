@@ -30,13 +30,12 @@ import Vue from 'vue'
 
 
 //Design
-Vue.component('card', require('./Card.vue').default);
 Vue.component('hform', require('./HForm.vue').default);
 Vue.component('group', require('./group.vue').default);
 
 //Comobobox
 Vue.component('combobox', require('./input/combobox.vue').default);
-Vue.component('search', require('./input/search.vue').default);
+//Vue.component('search', require('./input/search.vue').default);
 
 //Input
 Vue.component('input-text', require('./input/input-text.vue').default);

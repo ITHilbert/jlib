@@ -2,16 +2,18 @@
 const path = require('path');
 //const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const { VueLoaderPlugin } = require("vue-loader");
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = [
     //Vue
     {
         entry: {
-            main: "./src/vue/vuecomponents.js",
+            main: "./src/vue/vue.js",
         },
         output: {
-            filename: 'vuecomponents.js',
+            filename: 'vue.js',
             path: path.resolve(__dirname, 'dist')
         },
         module: {
@@ -62,35 +64,34 @@ module.exports = [
     },
     //SCSS Vue
     {
-        entry: ['./src/scss/vuecomponents.scss'],
+        entry: ['./src/scss/vue.scss'],
         module: {
             rules: [{
                 test: /.scss$/,
-                use: [{
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].css',
-                            outputPath: 'css/'
-                        }
-                    },
-                    {
-                        loader: 'extract-loader'
-                    },
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'postcss-loader'
-                    },
-                    {
-                        loader: 'sass-loader'
-                    }
+                use: [
+                    MiniCssExtractPlugin.loader, // MiniCssExtractPlugin anstelle von extract-loader
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
                 ]
             }]
         },
         output: {
-            filename: 'vuescsstmp.js',
-            path: path.resolve(__dirname, 'dist')
-        }
-    }
+            //filename: 'vue.css',
+            path: path.resolve(__dirname, 'dist/css')
+        },
+        plugins: [
+            new MiniCssExtractPlugin({
+                filename: 'vue-styles.css',
+            })
+        ],
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new CssMinimizerPlugin(),
+                new TerserPlugin(),
+            ],
+        },
+    },
+
 ];
