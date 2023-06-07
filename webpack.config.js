@@ -8,7 +8,7 @@ module.exports = [
     //Vue
     {
         entry: {
-            main: "./src/vuecomponents.js",
+            main: "./src/vue/vuecomponents.js",
         },
         output: {
             filename: 'vuecomponents.js',
@@ -43,7 +43,7 @@ module.exports = [
     },
     //Ts
     {
-        entry: './src/index.ts',
+        entry: './src/ts/index.ts',
         devtool: 'inline-source-map',
         module: {
             rules: [{

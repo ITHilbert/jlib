@@ -17,6 +17,8 @@
   "globals": { "BigInt": true, "console": true, "WebAssembly": true },
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "functional/no-class": "off",
+    "functional/immutable-data": "off",
     "eslint-comments/disable-enable-pair": [
       "error",
       { "allowWholeFile": true }
